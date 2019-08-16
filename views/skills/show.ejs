@@ -8,8 +8,9 @@
   <title>Skills List</title>
 </head>
 <body>
-  
+  <h1>Skills #<%= skillNum %></h1>
   <h3><%= skills.skill %></h3>
+  <h3>Complete: <%= todo.done ? 'Yes' : 'Nope' %></h3>
   <a href="/skills/<%= idx %>/edit">Skills List</a>
 </body>
 </html>

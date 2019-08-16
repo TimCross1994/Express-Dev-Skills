@@ -24,7 +24,9 @@ function edit(req, res) {
 }
 
 function deleteSkills(req, res) {
-  Skills.splice(req.params.id);
+  Skills.deleteOne(req.params.id);
+  // Skills.splice(0, req.params.id);
+  console.log(req.body);
   res.redirect('/skills');
 }
 
@@ -44,7 +46,7 @@ function newSkills(req, res) {
 
 function show(req, res) {
   res.render('skills/show', {
-    skills: skills.getOne(req.params.id),
+    skills: Skills.getOne(req.params.id),
     idx: req.params.id
   });
 }
